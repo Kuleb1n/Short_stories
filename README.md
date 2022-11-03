@@ -6,3 +6,5 @@ INSTALLED PACKAGES:
 
 Database:
 sqlite3
+
+SECRET_KEY=django-insecure-t65l#=evkt%^oghtq#vdi+(6o#u0210!ndhxib^rv0)dh@*#==
