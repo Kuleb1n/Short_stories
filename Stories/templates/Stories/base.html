@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Roboto:ital,wght@1,900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+<div class="container-body">
+    <div class="container-navbar">
+        <div class="navbar-ul">
+            <ul>
+                <li><a href="{% url 'index' %}" class="nav-a">Главная</a></li>
+                <li><a href="#" class="nav-a">Добавить *</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-list-categories">
+        <ul class="list-group">
+            <li class="list-group-item"><em>Категории:</em></li>
+            <li class="list-group-item"><a href="#" class="list-group-a">*</a></li>
+            <li class="list-group-item"><a href="#" class="list-group-a">*</a></li>
+            <li class="list-group-item"><a href="#" class="list-group-a">*</a></li>
+            <li class="list-group-item"><a href="#" class="list-group-a">*</a></li>
+        </ul>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+
+</div>
+</body>
+</html>
