@@ -27,10 +27,9 @@
     <div class="container-list-categories">
         <ul class="list-group">
             <li class="list-group-item"><em>Категории:</em></li>
-            <li class="list-group-item"><a href="#" class="list-group-a">*</a></li>
-            <li class="list-group-item"><a href="#" class="list-group-a">*</a></li>
-            <li class="list-group-item"><a href="#" class="list-group-a">*</a></li>
-            <li class="list-group-item"><a href="#" class="list-group-a">*</a></li>
+            {% for category in categories %}
+                <li class="list-group-item"><a href="#" class="list-group-a">{{ category.name }}</a></li>
+            {% endfor %}
         </ul>
     </div>
 
