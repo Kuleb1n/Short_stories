@@ -1,0 +1,29 @@
+{% extends 'Stories/base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ current_story.title }}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/read_more.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-card-news">
+        <div class="card-news">
+            <div class="card-header">
+                <em>{{ current_story.title }}</em>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ current_story.content }}</p>
+            </div>
+            <div class="card-footer-text-muted">
+                <em>{{ current_story.published }}</em>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
