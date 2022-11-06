@@ -13,6 +13,7 @@ class Story(models.Model):
     class Meta:
         verbose_name = 'Story'
         verbose_name_plural = 'Stories'
+        ordering = ['-published']
 
 
 class Category(models.Model):
