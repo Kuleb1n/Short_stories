@@ -19,7 +19,7 @@
         <div class="navbar-ul">
             <ul>
                 <li><a href="{% url 'index' %}" class="nav-a">Главная</a></li>
-                <li><a href="#" class="nav-a">Добавить *</a></li>
+                <li><a href="#" class="nav-a">Добавить рассказ</a></li>
             </ul>
         </div>
     </div>
@@ -28,7 +28,8 @@
         <ul class="list-group">
             <li class="list-group-item"><em>Категории:</em></li>
             {% for category in categories %}
-                <li class="list-group-item"><a href="#" class="list-group-a">{{ category.name }}</a></li>
+                <li class="list-group-item"><a href="{% url 'by_category' category.pk %}"
+                                               class="list-group-a">{{ category.name }}</a></li>
             {% endfor %}
         </ul>
     </div>
