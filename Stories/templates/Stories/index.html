@@ -18,11 +18,11 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">{{ i.content }}</p>
-
-
                 </div>
                 <div class="card-link">
-                    <a href="#">Read more...</a>
+
+                    <a href="{% url 'read_more' i.pk %}">Read more...</a>
+
                 </div>
                 <div class="card-footer-text-muted">
                     <em>{{ i.published }}</em>
