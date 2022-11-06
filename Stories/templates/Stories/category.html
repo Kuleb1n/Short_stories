@@ -1,0 +1,35 @@
+{% extends 'Stories/base.html' %}
+{% load static %}
+
+
+{% block title %}
+{{ current_category.name }}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
+{% endblock %}
+
+
+{% block content %}
+     {% for i in stories %}
+        <div class="container-card-news">
+            <div class="card-news">
+                <div class="card-header">
+                    <em>{{ i.title }}</em>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ i.content }}</p>
+                </div>
+                <div class="card-link">
+                    <a href="{% url 'read_more' i.pk %}">Read more...</a>
+                </div>
+                <div class="card-footer-text-muted">
+                    <em>{{ i.published }}</em>
+                </div>
+            </div>
+
+
+        </div>
+    {% endfor %}
+{% endblock %}
