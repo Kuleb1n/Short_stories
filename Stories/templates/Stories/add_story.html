@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static '/css/add.css' %}">
+
+    <title>Добавление рассказа</title>
+</head>
+<body>
+<div class="container-body">
+    <div class="container-navbar">
+        <div class="navbar-ul">
+            <ul>
+                <li><a href="{% url 'index' %}" class="nav-a">Главная</a></li>
+            </ul>
+        </div>
+    </div>
+    <h1>Добавление рассказа:</h1>
+    <div class="form">
+        <form action="{% url 'add_story' %}" method="post">
+            {% csrf_token %}
+            <div class="form-title"><label for="">Название:</label>{{ form.title }}</div>
+            <div class="form-content"><label for="">Описание:</label>{{ form.content }}</div>
+            <div class="form-category"><label for="">Категория:</label>{{ form.category }}</div>
+            <button class="btn">Добавить рассказ</button>
+            <br>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
