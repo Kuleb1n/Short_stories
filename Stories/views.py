@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Story, Category
+from .forms import StoryForm
 
 
 def index(request):
@@ -30,3 +31,15 @@ def read_more(request, story_id):
         'current_story': current_story,
     }
     return render(request, 'Stories/story.html', content)
+
+
+def add_story(request):
+    if request.method == 'POST':
+        form = StoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
+    else:
+        form = StoryForm()
+    return render(request, 'Stories/add_story.html', {'form': form, })
